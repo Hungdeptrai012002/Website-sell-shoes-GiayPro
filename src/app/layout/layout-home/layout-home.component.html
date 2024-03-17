@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="meta description">
+
+    <!-- Site title -->
+    <title>Galio - Cửa hàng điện máy</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/home/img/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!-- header area start -->
+        <header>
+
+            <!-- header top start -->
+            <div class="header-top-area bg-gray text-center text-md-left">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-5">
+                            <div class="header-call-action">
+                                <a href="#">
+                                    <i class="fa fa-envelope"></i>
+                                    hungdeptrai012002@gmail.com
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-phone"></i>
+                                    0335.242.002
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-7">
+                            <div class="header-top-right float-md-right float-none">
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <div class="dropdown header-top-dropdown">
+                                                <a class="dropdown-toggle" id="myaccount" data-toggle="dropdown"
+                                                    aria-haspopup="true" aria-expanded="false">
+                                                    Tài khoản
+                                                    <i class="fa fa-angle-down"></i>
+                                                </a>
+                                                <div class="dropdown-menu" aria-labelledby="myaccount">
+                                                    <a class="dropdown-item" href="taikhoan.html">Tài khoản</a>
+                                                    <a class="dropdown-item" href="dangnhap.html">Đăng nhập</a>
+                                                    <a class="dropdown-item" href="dangky.html">Đăng ký</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#">my wishlist</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Giỏ hàng</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Thanh toán</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header top end -->
+
+            <!-- header middle start -->
+            <div class="header-middle-area pt-20 pb-20">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3">
+                            <div class="brand-logo">
+                                <a href="home/homepage">
+                                    <img src="assets/home/img/sanpham/logo.png" alt="brand logo">
+                                </a>
+                            </div>
+                        </div> <!-- end logo area -->
+                        <div class="col-lg-9">
+                            <div class="header-middle-right">
+                                <div class="header-middle-shipping mb-20">
+                                    <div class="single-block-shipping">
+                                        <div class="shipping-icon">
+                                            <i class="fa fa-clock-o"></i>
+                                        </div>
+                                        <div class="shipping-content">
+                                            <h5>Thời gian làm việc</h5>
+                                            <span>Mon- Sun: 8.00 - 18.00</span>
+                                        </div>
+                                    </div> <!-- end single shipping -->
+                                    <div class="single-block-shipping">
+                                        <div class="shipping-icon">
+                                            <i class="fa fa-truck"></i>
+                                        </div>
+                                        <div class="shipping-content">
+                                            <h5>GIAO HÀNG</h5>
+                                            <span>Giao hàng nhanh chóng</span>
+                                        </div>
+                                    </div> <!-- end single shipping -->
+                                    <div class="single-block-shipping">
+                                        <div class="shipping-icon">
+                                            <i class="fa fa-money"></i>
+                                        </div>
+                                        <div class="shipping-content">
+                                            <h5>HOÀN TIỀN 100%</h5>
+                                            <span>Trong vòng 30 ngày sau khi giao hàng</span>
+                                        </div>
+                                    </div> <!-- end single shipping -->
+                                </div>
+                                <div class="header-middle-block">
+                                    <div class="header-middle-searchbox">
+                                        <input type="text" placeholder="Bạn đang tìm gì...">
+                                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                                    </div>
+                                    <a href="home/cart" class="header-mini-cart">
+                                        <div class="mini-cart-btn">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <span class="cart-notification">{{totalsl}}</span>
+                                        </div>
+                                        <div class="cart-total-price" style="font-size: 14px">
+                                            <span>{{totalprice}}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- header middle end -->
+
+            <!-- main menu area start -->
+            <div class="main-header-wrapper bdr-bottom1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="main-header-inner">
+                                <div class="category-toggle-wrap">
+                                    <div class="category-toggle">
+                                        Danh mục sản phẩm
+                                        <div class="cat-icon">
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+                                    <nav class="category-menu hm-1">
+                                        <ul *ngFor="let lsap of lsp">
+                                            <li><a [routerLink]="['/home/spdm', lsap.id]" > <i></i>{{lsap.tenloai}}</a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="main-menu">
+                                    <nav id="mobile-menu">
+                                        <ul>
+                                            <li class="active"><a href="home/homepage"><i class="fa fa-home"></i> Trang chủ </a></li>
+                                            <li class="static"><a href="home/about"> Giới thiệu </a>
+                                            <li class="static"><a href="home/tintuc"> Tin tức </a>
+                                            <li class="static"><a href="home/contact"> Liên hệ </a>
+                                            <li><a>Điều khoản <i class="fa fa-angle-down"></i></a>
+                                                <ul class="dropdown">
+                                                    <li><a href="dieukhoandichvu.html">Điều khoản dịch vụ</a></li>
+                                                    <li><a href="#">Quy định đổi trả</a></li>
+                                                    <li><a href="#">Quy định bảo hành</a></li>
+                                                    <li><a href="#">Trung tâm bảo hành</a></li>
+                                                    <li><a href="#">Chính sách bảo mật</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 d-block d-lg-none">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- main menu area end -->
+
+        </header>
+        <!-- header area end -->
+
+
+
+        <router-outlet></router-outlet>
+        <!-- brand area start -->
+<div class="brand-area pt-28 pb-30">
+  <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div class="section-title mb-30">
+                  <div class="title-icon">
+                      <i class="fa fa-crop"></i>
+                  </div>
+                  <h3>Thương hiệu</h3>
+              </div> <!-- section title end -->
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-12">
+              <div class="brand-active slick-padding slick-arrow-style">
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide11.jpg" alt=""></a>
+                  </div>
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide12.png" alt=""></a>
+                  </div>
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide13.png" alt=""></a>
+                  </div>
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide14.png" alt=""></a>
+                  </div>
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide15.png" alt=""></a>
+                  </div>
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide16.png" alt=""></a>
+                  </div>
+<div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide17.png" alt=""></a>
+                  </div>
+                  <div class="brand-item text-center">
+                      <a href="#"><img src="/assets/home/img/nhasanxuat/slide18.png" alt=""></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- brand area end -->
+        <!-- footer area start -->
+        <footer>
+            <!-- footer top start -->
+            <div class="footer-top bg-black pt-14 pb-14">
+                <div class="container">
+                    <div class="footer-top-wrapper">
+                        <div class="newsletter__wrap">
+                            <div class="newsletter__title">
+                                <div class="newsletter__icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="newsletter__content">
+                                    <h3>Đăng ký để nhận bản tin</h3>
+                                    <p>Nhập email vào nếu bạn muốn đăng ký nhận bản tin</p>
+                                </div>
+                            </div>
+                            <div class="newsletter__box">
+                                <form id="mc-form">
+                                    <input type="email" id="mc-email" autocomplete="off" placeholder="Email">
+                                    <button id="mc-submit">Đăng ký!</button>
+                                </form>
+                            </div>
+                            <!-- mailchimp-alerts Start -->
+                            <div class="mailchimp-alerts">
+                                <div class="mailchimp-submitting"></div><!-- mailchimp-submitting end -->
+                                <div class="mailchimp-success"></div><!-- mailchimp-success end -->
+                                <div class="mailchimp-error"></div><!-- mailchimp-error end -->
+                            </div>
+                            <!-- mailchimp-alerts end -->
+                        </div>
+                        <div class="social-icons">
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Google-plus"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Youtube"><i class="fa fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer top end -->
+
+            <!-- footer main start -->
+            <div class="footer-widget-area pt-40 pb-38 pb-sm-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget mb-sm-30">
+                                <div class="widget-title mb-10 mb-sm-6">
+                                    <h4>Liên hệ</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <ul class="location">
+                                        <li><i class="fa fa-envelope"></i>hungdeptrai012002</li>
+                                        <li><i class="fa fa-phone"></i>0335.242.002</li>
+                                        <li><i class="fa fa-map-marker"></i>Địa chỉ: Thuỵ Hoà, Yên Phong, Bắc Ninh</li>
+                                    </ul>
+                                    <a class="map-btn" href="home/contact">Mở trong google map</a>
+                                </div>
+                            </div> <!-- single widget end -->
+                        </div> <!-- single widget column end -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget mb-sm-30">
+                                <div class="widget-title mb-10 mb-sm-6">
+                                    <h4>Tài khoản</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <ul>
+                                        <li><a href="#">Tài khoản của tôi</a></li>
+                                        <li><a href="#">Đơn hàng của tôi</a></li>
+                                        <li><a href="#">Giỏ hàng của tôi</a></li>
+                                        <li><a href="#">Đăng nhập</a></li>
+                                        <li><a href="#">Đăng ký</a></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- single widget end -->
+                        </div> <!-- single widget column end -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget mb-sm-30">
+                                <div class="widget-title mb-10 mb-sm-6">
+                                    <h4>Nội dung</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <ul>
+                                        <li><a href="home/homepage">Trang chủ</a></li>
+                                        <li><a href="home/about">Giới thiệu</a></li>
+                                        <li><a href="home/tintuc">Tin tức</a></li>
+                                        <li><a href="home/contact">Liên hệ</a></li>
+                                        <li><a href="home/cart">Giỏ hàng</a></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- single widget end -->
+                        </div> <!-- single widget column end -->
+                        <div class="col-md-3 col-sm-6">
+                            <div class="footer-widget mb-sm-30">
+                                <div class="widget-title mb-10 mb-sm-6">
+                                    <h4>Điều khoản</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <ul>
+                                        <li><a href="#">Điều khoản dịch vụ</a></li>
+                                        <li><a href="#">Quy định đổi trả</a></li>
+                                        <li><a href="#">Quy định bảo hành</a></li>
+                                        <li><a href="#">Trung tâm bảo hành</a></li>
+                                        <li><a href="#">Chính sách bảo mật</a></li>
+                                    </ul>
+                                </div>
+                            </div> <!-- single widget end -->
+                        </div> <!-- single widget column end -->
+                    </div>
+                </div>
+            </div>
+            <!-- footer main end -->
+
+            <!-- footer bootom start -->
+            <div class="footer-bottom-area bg-gray pt-20 pb-20">
+                <div class="container">
+                    <div class="footer-bottom-wrap">
+                        <div class="copyright-text">
+                            <p><a target="_blank">@Bản quyền thuộc về Nguyễn Cao Hùng</a></p>
+                        </div>
+                        <div class="payment-method-img">
+                            <img src="/assets/home/img/payment.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer bootom end -->
+
+        </footer>
+        <!-- footer area end -->
+
+    </div>
+
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+
+    <!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+
+
+</body>
+
+
+
+</html>

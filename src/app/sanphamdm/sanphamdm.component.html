@@ -1,0 +1,136 @@
+<!-- header area end -->
+
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="breadcrumb-wrap">
+                          <nav aria-label="breadcrumb">
+                              <ul class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="home/homepage">Trang chủ</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">Danh mục sản phẩm</li>
+                              </ul>
+                          </nav>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- breadcrumb area end -->
+
+      <!-- page wrapper start -->
+
+
+                  <!-- product main wrap start -->
+                  <div  class="col-lg-9 order-1 order-lg-2">
+                      <!-- product view wrapper area start -->
+                      <div class="shop-product-wrapper">
+                          <!-- shop product top wrap start -->
+                          <div class="shop-top-bar">
+                              <div class="row">
+                                  <div class="col-lg-7 col-md-6">
+                                      <div class="top-bar-left">
+                                          <div class="product-view-mode mr-70 mr-sm-0">
+                                              <a href="#" data-target="grid"><i class="fa fa-th"></i></a>
+                                              <a class="active" href="#" data-target="list"><i class="fa fa-list"></i></a>
+                                          </div>
+                                          <div class="product-amount">
+                                              <p>Có tổng 52 sản phẩm</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-5 col-md-6">
+                                      <div class="top-bar-right">
+                                          <div class="product-short">
+                                              <p>Sắp xếp: </p>
+                                              <select class="nice-select" name="sortby">
+                                                  <option value="trending">Ngày thêm</option>
+                                                  <option value="sales">Bán chạy</option>
+                                                  <option value="sales">Giảm giá</option>
+                                                  <option value="sales">Ngẫu nhiên</option>
+                                              </select>
+                                          </div>
+                                      </div>
+</div>
+                              </div>
+                          </div>
+                          <!-- shop product top wrap start -->
+
+                          <!-- product item start -->
+                          <div  class="shop-product-wrap list row">
+
+                              <div  class="col-lg-3 col-md-4 col-sm-6"*ngFor="let item of Sanpham">
+                                  <!-- product single grid item start -->
+                                  <div class="product-item fix mb-30">
+
+                                      <!-- product single item start -->
+                                      <div class="product-item fix"  >
+                                          <div class="product-thumb">
+                                              <a href="chitietsanpham.html">
+                                                  <img style="width: 270px; height: 180px;" src="assets/home/img/sanpham/{{item.anh}}" class="img-pri" alt="">
+                                              </a>
+                                              <div class="product-label ml-140">
+                                                  <span>hot</span>
+                                              </div>
+                                              <div class="product-action-link mt-154">
+                                                  <a (click)="addcart(item)"><i class="fa fa-shopping-cart"></i></a>
+                                              </div>
+                                          </div>
+                                          <div class="product-content text-center border-top">
+                                              <a href="chitietsanpham.html" class="product-title text-dark font-weight-bold">{{item.ten}} </a>
+                                              <div class="pricebox">
+                                                  <span class="price text-danger">{{ item.giaban| currency:"":"":"5.0" }}đ</span><br/>
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <!-- product single item end -->
+
+                                  </div>
+                                  <!-- product single grid item end -->
+                                  <!-- product single list item start -->
+                                  <div class="product-list-item mb-30">
+                                    <div class="product-thumb">
+                                        <a href="product-details.html">
+                                            <img src="assets/home/img/sanpham/{{item.anh}}" class="img-pri" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="product-list-content">
+<h3><a href="product-details.html">{{item.ten}}</a></h3>
+                                        <div class="pricebox">
+                                            <span class="regular-price">{{ item.giaban| currency:"":"":"5.0" }}đ</span>
+                                        </div>
+                                        <p>{{item.mota}}</p>
+                                        <div class="product-list-action-link">
+                                            <a (click)="addcart(item)" class="buy-btn" data-toggle="tooltip" data-placement="top" title="Thêm vào giỏ hàng">Mua hàng<i class="fa fa-shopping-cart"></i> </a>
+                                            <a href="#" data-toggle="modal" data-target="#quick_view"> <span data-toggle="tooltip" data-placement="top" title="Chi tiết sản phẩm"><i class="fa fa-search"></i></span> </a>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="Sản phẩm cùng loại"><i class="fa fa-bars"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                  <!-- product single list item start -->
+                              </div> <!-- product single column end -->
+
+
+
+                      <!-- start pagination area -->
+                      <div class="paginatoin-area text-center pt-28">
+                          <div class="row">
+                              <div class="col-12">
+                                  <ul class="pagination-box">
+                                      <li><a class="Previous" href="#">Trước</a></li>
+                                      <li class="active"><a href="#">1</a></li>
+                                      <li><a href="#">2</a></li>
+                                      <li><a href="#">3</a></li>
+                                      <li><a class="Next" href="#"> Sau </a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                      <!-- end pagination area -->
+
+                  </div>
+
+      <!-- page wrapper end -->
+
+      

@@ -1,0 +1,19 @@
+<h1>
+  Danh sach mang
+</h1>
+<ol>
+  <li *ngFor="let td of todo">{{td}}</li>
+</ol>
+<h1>Danh sach json</h1>
+<table>
+  <thead>
+    <th>Ma</th>
+    <th>Ten</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let nv of todoj">
+      <td>{{nv.id}}</td>
+      <td>{{nv.name}}</td>  
+    </tr>
+  </tbody>
+</table>

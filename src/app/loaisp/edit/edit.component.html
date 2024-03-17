@@ -1,0 +1,14 @@
+<h2>Sửa Loại Sản Phẩm</h2>
+
+<form (submit)="updateLoaisp()" method="post ">
+  <!-- Tên loại sản phẩm -->
+  <label for="loaisp-name ">Tên Loại Sản Phẩm: </label>
+  <input type="text " id="tenloai " [(ngModel)]="myResult.tenloai " name="tenloai " required><br>
+
+  <!-- Trạng thái -->
+  <label for="loaisp-description ">Trạng Thái: </label>
+  <input type="checkbox" id="trangthai " [(ngModel)]="myResult.trangthai " name="trangthai " rows="4 " required><br>
+
+  <!-- Nút submit để gửi biểu mẫu -->
+  <button class="btn btn-primary " type="submit ">Sửa Loại Sản Phẩm</button>
+</form>

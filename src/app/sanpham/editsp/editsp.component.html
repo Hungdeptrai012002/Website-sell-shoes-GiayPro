@@ -1,0 +1,57 @@
+<h2>Sửa sản phẩm</h2>
+
+<form (submit)="updateSanpham()" method="post ">
+  <!-- Tên sản phẩm -->
+  <!-- <label for="loaisp-id ">Mã loại sản phẩm: </label>
+  <select class="form-control m-bot15" id="id_loai_sp" [(ngModel)]="data[0].id_cat" style="width: 300px;height:30px" required>
+    <option *ngFor="let lsp of loaisp" [value]="lsp.id">
+      {{ lsp.cat_name}}
+    </option>
+  </select> -->
+  <label for="loaisp-name">Mã Loại Sản Phẩm: </label>
+
+  <input list="loaiSanPhamList" id="loaiSanPhamInput" [(ngModel)]="data[0].id_loai" name="loaiSanPham"
+    placeholder="Chọn loại sản phẩm">
+  <datalist id="loaiSanPhamList">
+    <option *ngFor="let item of loaisp" [value]="item.id">{{ item.tenloai }}</option>
+  </datalist><br>
+
+  <label for="sanpham-ncc ">Nhà cung cấp: </label>
+  <input type="text " id="ncc " [(ngModel)]="data[0].id_ncc" name="ncc " required><br>
+
+  <label for="sanpham-image ">Ảnh: </label>
+  <input type="file" id="imageUpload" class="inputfile" name="anh" accept="anh/*" (change)="onFileChanged($event)" /><br>
+
+  <label for="sanpham-name ">Tên Sản Phẩm: </label>
+  <input type="text " id="tensanpham " [(ngModel)]="data[0].ten " name="tensanpham " required><br>
+
+  <label for="sanpham-des ">Mô Tả Sản Phẩm: </label>
+  <input type="text " id="mtsanpham " [(ngModel)]="data[0].mota" name="mtsanpham " required><br>
+
+  <label for="sanpham-price ">Giá Sản Phẩm: </label>
+  <input type="text " id="giasanpham " [(ngModel)]="data[0].giaban " name="giasanpham " required><br>
+
+  <label for="sanpham-price ">Giá Khuyến mãi: </label>
+  <input type="text " id="giasanpham " [(ngModel)]="data[0].giakm " name="giasanpham " required><br>
+
+  <label for="sanpham-spluong ">Số lượng: </label>
+  <input type="text " id="soluong" [(ngModel)]="data[0].soluong " name="soluong " required><br>
+
+
+
+  <label for="sanpham-dvt ">Ghichu: </label>
+  <input type="text " id="donvitinh " [(ngModel)]="data[0].ghichu" name="donvitinh " required><br>
+
+   <!-- Trạng thái -->
+ <label for="sanpham-delet ">Trạng Thái: </label>
+ <input type="checkbox" id="trangthai " [(ngModel)]="data[0].trangthai " name="trangthai " rows="4 " required><br>
+
+
+  <!-- <input type="file" name="anhsanpham" id="anhsanpham" [(ngModel)]="data[0].image" class="inputfile" required /><br> -->
+
+
+
+
+  <!-- Nút submit để gửi biểu mẫu -->
+  <button class="btn btn-primary " type="submit ">Sửa Loại Sản Phẩm</button>
+</form>

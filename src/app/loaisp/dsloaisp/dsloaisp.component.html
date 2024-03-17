@@ -1,0 +1,38 @@
+<div class="container-fluid">
+<!-- User Table -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <a href="/loaisp/create">
+      <button class="btn btn-primary">Thêm Loại</button>
+    </a>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Tên Loại</th>
+            <th>Trạng Thái</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Use Angular *ngFor to display user data -->
+          <tr *ngFor="let sp of sps;let i = index">
+            <td>{{ sp.id }}</td>
+            <td>{{ sp.tenloai }}</td>
+            <td>{{ sp.trangthai }}</td>
+
+            <td><a href="loaisp/edit/{{sp.id}}" class="btn btn-info "><i class='fa fa-pencil'></i></a></td>
+            <td><button class="btn btn-danger" (click)="deleteLoaisp(sp.id)"><i class="fa fa-trash "></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

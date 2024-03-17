@@ -1,0 +1,44 @@
+
+<!-- User Table -->
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <a href="/create">
+      <button class="btn btn-primary">Thêm Nhà Cung Cấp</button>
+    </a>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Tên Nhà Cung Cấp</th>
+            <th>Địa chỉ</th>
+            <th>Email</th>
+            <th>Số điện thoại</th>
+            <th>Trạng Thái</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Use Angular *ngFor to display user data -->
+          <tr *ngFor="let sp of ncc;let i = index">
+            <td>{{ sp.id }}</td>
+            <td>{{ sp.tenncc }}</td>
+            <td>{{ sp.diachi }}</td>
+            <td>{{ sp.email }}</td>
+            <td>{{ sp.sdt }}</td>
+            <td>{{ sp.trangthai }}</td>
+            <td><button class="btn btn-primary "><i class="fa fa-eye "></i></button></td>
+            <td><a href="ncc/edit/{{sp.id}}" class="btn btn-info "><i class='fa fa-pencil'></i></a></td>
+            <td><button class="btn btn-danger" (click)="deleteNcc(sp.id)"><i class="fa fa-trash "></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

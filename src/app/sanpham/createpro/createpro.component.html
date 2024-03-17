@@ -1,0 +1,52 @@
+<h2>Thêm Sản Phẩm</h2>
+
+<form (submit)="addsanpham()" method="post ">
+  <!-- Tên sản phẩm -->
+  <!-- <label for="loaisp-id ">Mã loại sản phẩm: </label>
+  <select class="form-control m-bot15" id="id_loai_sp" [(ngModel)]="myResult.id_cat" style="width: 300px;height:30px" required>
+    <option *ngFor="let lsp of loaisp" [value]="lsp.id">
+      {{ lsp.cat_name}}
+    </option>
+  </select> -->
+  <label for="loaisp-name">Mã Loại Sản Phẩm: </label>
+
+  <input list="loaiSanPhamList" id="loaiSanPhamInput" [(ngModel)]="myResult.id_loai" name="loaiSanPham"
+    placeholder="Chọn loại sản phẩm">
+  <datalist id="loaiSanPhamList">
+    <option *ngFor="let item of loaisp" [value]="item.id">{{ item.tenloai }}</option>
+  </datalist><br>
+  <label for="sanpham-name ">Tên Nhà cung cấp: </label>
+  <input type="text " id="tensanpham " [(ngModel)]="myResult.id_ncc " name="tensanpham " required><br>
+  <!-- <label for="loaisp-id ">Mã loại sản phẩm: </label>
+  <input type="text " id="maloaisp " [(ngModel)]="myResult.id_cat " name="maloaisp " required><br>
+  <option *ngFor="let lsp of loaisp" [value]="lsp.id">
+    {{ lsp.cat_name }}
+  </option> -->
+  <label for="sanpham-image ">Ảnh: </label>
+  <input type="file" id="imageUpload" class="inputfile" name="anh" accept="anh/*" (change)="onFileChanged($event)" /><br>
+  <label for="sanpham-name ">Tên Sản Phẩm: </label>
+  <input type="text " id="tensanpham " [(ngModel)]="myResult.ten " name="tensanpham " required><br>
+  <label for="sanpham-des ">Mô Tả Sản Phẩm: </label>
+  <input type="text " id="mtsanpham " [(ngModel)]="myResult.mota " name="mtsanpham " required><br>
+  <label for="sanpham-price ">Giá Sản Phẩm: </label>
+  <input type="text " id="giasanpham " [(ngModel)]="myResult.giaban " name="giasanpham " required><br>
+  <label for="sanpham-price ">Giá khuyến mãi: </label>
+  <input type="text " id="giasanpham " [(ngModel)]="myResult.giakm " name="giasanpham " required><br>
+
+  <label for="sanpham-delet ">Số lượng: </label>
+  <input type="text" id="trangthai " [(ngModel)]="myResult.soluong " name="trangthai " rows="4 " required><br>
+  <label for="sanpham-price ">Ghi chú: </label>
+  <input type="text " id="giasanpham " [(ngModel)]="myResult.ghichu " name="giasanpham " required><br>
+  <label for="sanpham-price ">Trạng thái: </label>
+  <input type="text " id="giasanpham " [(ngModel)]="myResult.trangthai " name="giasanpham " required><br>
+
+  <!-- <input type="file" name="anhsanpham" id="anhsanpham" [(ngModel)]="myResult.image" class="inputfile" required /><br> -->
+
+
+  <!-- Trạng thái -->
+
+
+  <!-- Nút submit để gửi biểu mẫu -->
+  <button class="btn btn-primary " type="submit ">Thêm Sản Phẩm</button>
+</form>
+
